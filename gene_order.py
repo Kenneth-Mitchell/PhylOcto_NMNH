@@ -6,6 +6,7 @@ from gene_order_params import GeneOrder, expected_genes, start_gene
 import argparse
 import os
 import sys
+import csv
 
 
 def gene_order(file, store_new = False):
@@ -51,27 +52,42 @@ def gene_order(file, store_new = False):
         return gene_order
 
 
+def info(file):
+    f = open(file)
+    lines = f.readlines()
+    for line in lines:
+        if 'Length: ' in line:
+            length = line.split()[1]
+        elif 'GC Content: ' in line:
+            GC = line.split()[2]
+        elif 'Circularization: ' in line:
+            Circularization = line.split()[1]
+    return length, GC, Circularization
+
+
 
 def main():
     parser = argparse.ArgumentParser(description='given a genbank formatted file or directory holding .gb files, returns the gene order for each ')
     parser.add_argument('file', type=str, help='a single .gb file or a directory holding .gb files (if in batch mode)')
     parser.add_argument('--name', type=str, help='what you would like to name the output file (default is based on the file(s) run)', default=None)
     parser.add_argument('--overwrite',  action='store_true', help='overwrites any existing gene order files')
-    parser.add_argument('--batch', action='store_true', help='batch mode. if included, give gene_order.py a dir full of the files you want to run')
+    # parser.add_argument('--batch', action='store_true', help='batch mode. if included, give gene_order.py a dir full of the files you want to run')
     #parser.add_argument('--new_gene_orders', action='store_true', help='store new gene orders in gene_order_params (does not by default)', default=False)
     
 
 
     args = parser.parse_args()
 
-    if args.batch:
-        list_of_files = os.listdir(args.file)
-        list_of_G_O = []
-        for file in list_of_files:
-            file = str(args.file) + '/' + str(file)
-            list_of_G_O.append((file, str(gene_order(file))))
-    else:
-        list_of_G_O.append((file, str(gene_order(file))))
+    # if args.batch:
+    list_of_files = os.listdir(args.file)
+    dict_of_G_O = {}
+    dict_of_info = {}
+    for file in list_of_files:
+        file = str(args.file) + '/' + str(file)
+        if file.endswith(".info"):
+            dict_of_info[file.removesuffix('info')]=info(file)
+        elif file.endswith('.gb'):
+            dict_of_G_O[file.removesuffix('.gb')]=str(gene_order(file))
 
     if args.name:
         fn = args.name
@@ -86,12 +102,16 @@ def main():
             raise Exception('gene order file exist with name ' + fn +'. Did you mean to use --overwrite?')
         f = open(fn, 'w+', encoding = "ISO-8859-1")
 
-    for file, g_o in list_of_G_O:
+    keys = list(set(list(dict_of_G_O.keys) + list(dict_of_info.keys)))
 
-        f.write(file)
-        f.write('\n')
-        f.write(g_o)
-        f.write('\n')
+    writer= csv.writer(f)
+    
+    writer.writerow(['Sample', 'Gene Order Identified', 'mtGenome Length', 'GC Content', 'Circularization'])
+    
+
+    for key in dict_of_G_O.keys:
+        writer.writerow([str(key), dict_of_G_O[key], dict_of_info[key][0], dict_of_info[key][1], dict_of_info[key][2]])
+
 
     f.close()
 
