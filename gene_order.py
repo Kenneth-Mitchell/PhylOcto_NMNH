@@ -106,7 +106,7 @@ def main():
             if info:
                 dict_of_info[file]= info
         elif file.endswith('.gb'):
-            file = file.removesuffix('.gb')
+            file = file.removesuffix('_mtDNA_contig.gb')
             gene_order = get_gene_order(path)
             if gene_order:
                 dict_of_G_O[file]=str(gene_order)
