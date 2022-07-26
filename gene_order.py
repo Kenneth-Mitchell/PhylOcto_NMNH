@@ -58,11 +58,11 @@ def info(file):
     for line in lines:
         if 'Length: ' in line:
             length = line.split()[1]
-        elif 'GC Content: ' in line:
-            GC = line.split()[2]
+        elif 'GC content: ' in line:
+            GC_Content = line.split()[2]
         elif 'Circularization: ' in line:
             Circularization = line.split()[1]
-    return length, GC, Circularization
+    return length, GC_Content, Circularization
 
 
 
@@ -83,11 +83,13 @@ def main():
     dict_of_G_O = {}
     dict_of_info = {}
     for file in list_of_files:
-        file = str(args.file) + '/' + str(file)
-        if file.endswith(".info"):
-            dict_of_info[file.removesuffix('info')]=info(file)
+        path = str(args.file) + '/' + str(file)
+        if file.endswith(".infos"):
+            file = file.removesuffix('.infos')
+            dict_of_info[file]=info(path)
         elif file.endswith('.gb'):
-            dict_of_G_O[file.removesuffix('.gb')]=str(gene_order(file))
+            file = file.removesuffix('.gb')
+            dict_of_G_O[file]=str(gene_order(path))
 
     if args.name:
         fn = args.name
@@ -102,16 +104,21 @@ def main():
             raise Exception('gene order file exist with name ' + fn +'. Did you mean to use --overwrite?')
         f = open(fn, 'w+', encoding = "ISO-8859-1")
 
-    keys = list(set(list(dict_of_G_O.keys) + list(dict_of_info.keys)))
+    keys = list(set(list(dict_of_G_O.keys()) + list(dict_of_info.keys())))
 
     writer= csv.writer(f)
     
     writer.writerow(['Sample', 'Gene Order Identified', 'mtGenome Length', 'GC Content', 'Circularization'])
     
 
-    for key in dict_of_G_O.keys:
+    for key in keys:
+        # try:
         writer.writerow([str(key), dict_of_G_O[key], dict_of_info[key][0], dict_of_info[key][1], dict_of_info[key][2]])
-
+        # except:
+        #     try:
+        #         writer.writerow([str(key), dict_of_G_O[key]])
+        #     except:
+        #         pass
 
     f.close()
 
