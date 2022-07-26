@@ -8,7 +8,7 @@ import sys
 import csv
 
 
-def find_gene_match(gene_in_sample):
+def find_gene_match(gene_in_sample,file):
     for gene in expected_genes:
 
         for gene_name in gene:
@@ -16,7 +16,7 @@ def find_gene_match(gene_in_sample):
             if gene_name == gene_in_sample:
                 return gene[0]
 
-    print(f'Unexpected gene detected: {gene_in_sample}. Continuing to complete gene order anyways...')
+    print(f'Unexpected gene detected: {gene_in_sample} in file {file}. Continuing to complete gene order anyways...')
     return None
 
 def get_gene_order(file, store_new = False):
@@ -36,7 +36,7 @@ def get_gene_order(file, store_new = False):
                         except:
                             break
 
-                    gene_match = find_gene_match(gene_in_sample)
+                    gene_match = find_gene_match(gene_in_sample,file)
                     if gene_match:
                         gene_order.append(gene_match)
 
