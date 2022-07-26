@@ -16,7 +16,7 @@ def find_gene_match(gene_in_sample):
             if gene_name == gene_in_sample:
                 return gene[0]
 
-    print(f'Unexpected gene detected: {gene_in_sample}. Moving to next sample...')
+    print(f'Unexpected gene detected: {gene_in_sample}. Continuing to complete gene order anyways...')
     return None
 
 def get_gene_order(file, store_new = False):
@@ -37,9 +37,8 @@ def get_gene_order(file, store_new = False):
                             break
 
                     gene_match = find_gene_match(gene_in_sample)
-                    if not gene_match:
-                        return None
-                    gene_order.append(gene_match)
+                    if gene_match:
+                        gene_order.append(gene_match)
 
         missing_genes = []      
         for gene in expected_genes:
