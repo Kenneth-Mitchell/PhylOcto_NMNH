@@ -44,11 +44,11 @@ def get_gene_order(file, store_new = False):
         for gene in expected_genes:
             gene_name = gene[0]
             if gene_name not in gene_order:
-                missing_genes+= gene_name
+                missing_genes.append(gene_name)
         
         if missing_genes: 
             print(f"Missing genes {missing_genes} in file {file}. Moving to next sample...\n")
-            return None
+            return 'None'
 
         index = gene_order.index(start_gene)
         gene_order = tuple(gene_order[index:] + gene_order[:index])
