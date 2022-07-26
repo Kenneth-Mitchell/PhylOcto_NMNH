@@ -1,6 +1,5 @@
 from enum import Enum
 from logging import raiseExceptions
-import pandas as pd
 from Bio import SeqIO
 from gene_order_params import GeneOrder, expected_genes, start_gene
 import argparse
