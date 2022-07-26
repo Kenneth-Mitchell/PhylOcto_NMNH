@@ -42,8 +42,9 @@ def get_gene_order(file, store_new = False):
 
         missing_genes = []      
         for gene in expected_genes:
-            if gene[0] not in gene_order:
-                missing_genes+= gene[0]
+            gene_name = gene[0]
+            if gene_name not in gene_order:
+                missing_genes+= gene_name
         
         if missing_genes: 
             print(f"Missing genes {missing_genes} in file {file}. Moving to next sample...\n")
@@ -131,6 +132,9 @@ def main():
     
 
     for key in keys:
+        print(key)
+        print(dict_of_G_O[key])
+        print(dict_of_info[key])
         # try:
         writer.writerow([str(key), dict_of_G_O[key], dict_of_info[key][0], dict_of_info[key][1], dict_of_info[key][2]])
         # except:
