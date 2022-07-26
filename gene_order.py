@@ -50,20 +50,28 @@ def get_gene_order(file, store_new = False):
             print(f"Missing genes {missing_genes} in file {file}. Moving to next sample...\n")
             return 'None'
 
+        gene_order_reverse = gene_order
+
+        
         index = gene_order.index(start_gene)
-        gene_order = tuple(gene_order[index:] + gene_order[:index])
+        index_r = gene_order_reverse.index(start_gene)
+        gene_order_forward = tuple(gene_order[index:] + gene_order[:index])
+        gene_order_reverse = tuple(gene_order_reverse[index_r:] + gene_order_reverse[:index_r])
         
         try: 
-            gene_order = GeneOrder(gene_order).name
+            gene_order = GeneOrder(gene_order_forward).name
+
 
         except:
-            
-            print('Detected new gene order!\n')
-            print(gene_order)
-            print('\n')
-            # print('If you would like to save new gene orders, specify --new_gene_orders')
-            return 'New'
-            # raise Exception('Program stopped by new gene order. add to params and continue')
+            try:
+                gene_order = GeneOrder(gene_order_reverse).name
+            except:
+                print('Detected new gene order!\n')
+                print(gene_order)
+                print('\n')
+                # print('If you would like to save new gene orders, specify --new_gene_orders')
+                return 'New'
+                # raise Exception('Program stopped by new gene order. add to params and continue')
 
         return gene_order
 
