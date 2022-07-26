@@ -9,7 +9,18 @@ import sys
 import csv
 
 
-def gene_order(file, store_new = False):
+def find_gene_match(gene_in_sample):
+    for gene in expected_genes:
+
+        for gene_name in gene:
+
+            if gene_name == gene_in_sample:
+                return gene[0]
+
+    print(f'Unexpected gene detected: {gene_in_sample}. Moving to next sample...')
+    return None
+
+def get_gene_order(file, store_new = False):
 
     with open(file) as handle:
         for sample in SeqIO.parse(handle, "genbank"):
@@ -26,13 +37,19 @@ def gene_order(file, store_new = False):
                         except:
                             break
 
-                    for genes in expected_genes:
+                    gene_match = find_gene_match(gene_in_sample)
+                    if not gene_match:
+                        return None
+                    gene_order.append(gene_match)
 
-                            for gene in genes:
-
-                                if gene == gene_in_sample:
-                                    gene_order.append(genes[0])
-                            
+        missing_genes = []      
+        for gene in expected_genes:
+            if gene[0] not in gene_order:
+                missing_genes+= gene[0]
+        
+        if missing_genes: 
+            print(f"Missing genes {missing_genes} in file {file}. Moving to next sample...\n")
+            return None
 
         index = gene_order.index(start_gene)
         gene_order = tuple(gene_order[index:] + gene_order[:index])
@@ -52,7 +69,7 @@ def gene_order(file, store_new = False):
         return gene_order
 
 
-def info(file):
+def get_info(file):
     f = open(file)
     lines = f.readlines()
     for line in lines:
@@ -86,10 +103,14 @@ def main():
         path = str(args.file) + '/' + str(file)
         if file.endswith(".infos"):
             file = file.removesuffix('.infos')
-            dict_of_info[file]=info(path)
+            info = get_info(path)
+            if info:
+                dict_of_info[file]= info
         elif file.endswith('.gb'):
             file = file.removesuffix('.gb')
-            dict_of_G_O[file]=str(gene_order(path))
+            gene_order = get_gene_order(path)
+            if gene_order:
+                dict_of_G_O[file]=str(gene_order)
 
     if args.name:
         fn = args.name
@@ -101,7 +122,7 @@ def main():
         f = open(fn, 'x', encoding = "ISO-8859-1")
     except IOError:
         if not args.overwrite:
-            raise Exception('gene order file exist with name ' + fn +'. Did you mean to use --overwrite?')
+            raise Exception(f'Gene order file exist with name {fn}Did you mean to use --overwrite?')
         f = open(fn, 'w+', encoding = "ISO-8859-1")
 
     keys = list(set(list(dict_of_G_O.keys()) + list(dict_of_info.keys())))
