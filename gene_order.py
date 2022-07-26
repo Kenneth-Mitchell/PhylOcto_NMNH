@@ -50,7 +50,7 @@ def get_gene_order(file, store_new = False):
             print(f"Missing genes {missing_genes} in file {file}. Moving to next sample...\n")
             return 'None'
 
-        gene_order_reverse = gene_order.reverse()
+        gene_order_reverse = gene_order[::-1]
 
         
         index = gene_order.index(start_gene)
