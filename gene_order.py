@@ -62,8 +62,8 @@ def get_gene_order(file, store_new = False):
             print(gene_order)
             print('\n')
             # print('If you would like to save new gene orders, specify --new_gene_orders')
-                
-            raise Exception('Program stopped by new gene order. add to params and continue')
+            return 'New'
+            # raise Exception('Program stopped by new gene order. add to params and continue')
 
         return gene_order
 
