@@ -3,9 +3,9 @@ library(phytools)
 
 # parameters (to edit!)
 
-tree_file <-'/Users/kennethmitchell/Desktop/NMNH Coral Lab/pruned_dated.tree'
+tree_file <-'pruned_dated.tree'
 
-traits_table_file <- "/Users/kennethmitchell/Desktop/NMNH Coral Lab/traits_table_binary.csv" #traits table is a csv with a column 'GeneOrder' and a column 'Species'
+traits_table_file <- "traits_table_binary.csv" #traits table is a csv with a column 'GeneOrder' and a column 'Species'
 
 colors <- c("black","red") #choose a number of colors equal to the number of unique traits
 

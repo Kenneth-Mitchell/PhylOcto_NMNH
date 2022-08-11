@@ -1,0 +1,208 @@
+﻿Sample,GeneOrder,Species
+S001,A,Pseudodrifa nigra 2
+S002,A,Pseudodrifa nigra 1
+S003,A,Pseudodrifa nigra 1
+S004,A,Pseudodrifa nigra 2
+S005,A,Swifita nov sp
+S006,O,Pseudoanthomastus sp 
+S007,A,Metallogorgia melanotrichos 
+S008,A,Chrysogorgia cf artospira
+S009,O,Hemicorallium cf Imperiale
+S010,A,Paramuricea type B
+S011,A,Iridogorgia splendens 
+S012,A,Acanthogorgia spissa 
+S013,A,Swiftia sp 
+S014,A,Acanthogorgia aspera 
+S015,A,Paramuricea type A
+S016,O,Anthomastus  
+S018,A,Swiftia casta 
+S019,A,Chrysogorgia sp 1b
+S020,A,Carijoa sp 
+S030,A,Swiftia pallida 
+S031,A,Lateothela grandiflora 
+S032,A,Plumarella sp 1
+S033,A,Callogorgia delta 
+S034,A,Alcyonacea sp 
+S035,A,Plexauridae sp 2
+S036,A,Plexauridae sp 3
+S037,A,Holoxonia sp 1
+S038,A,Paragorgia sp 
+S042,A,Ellisellidae sp 4
+S043,A,Placogorgia sp 
+S044,A,Placogorgia sp 
+S045,A,Ellisellidae sp 6
+S046,A,Alcyonacea sp 2
+S047,A,Ellisellidae sp 2
+S048,A,Placogorgia sp 3
+S049,A,Plexauridae sp 1
+S050,A,Ellisellidae sp 3
+S052,O,Anthomastus sp 
+S055,A,Holoxonia sp 2
+S056,A,Holoxonia sp 3
+S057,A,Leptogorgia sp 
+S058,A,Chironepthya sp 2
+S062,O,Anthomastus sp 
+S063,A,Alcyonacea sp 3
+S066,A,Holoxonia sp 4
+S067,A,Ellisellidae sp 5
+S068,A,Ellisellidae sp 6
+S069,A,Chironephthya sp 1
+S071,A,Plexauridae sp 4
+S072,A,Octocorallia sp 
+S073,A,Alcyonacea sp 4
+S074,A,Callogorgia sp 
+S075,A,Alcyonacea sp 6
+S080,A,Primnoidae sp 
+S081,A,Paramuricea sp 
+S082,A,Chelidonsis sp 
+S083,A,Muricella Sp 2
+S084,A,Alcyonacea sp 5
+S085,A,Swiftia exserta 
+S086,A,Swiftia exserta 
+S087,A,Swiftia exserta 
+S088,A,Swiftia exserta 
+S089,A,Swiftia exserta 
+S090,A,Muricea pendula 
+S091,A,Muricea pendula 
+S092,A,Muricea pendula 
+S093,A,Muricea pendula 
+S094,A,Muricea pendula 
+S095,A,Ellisellidae sp 7
+S096,A,Pseudoplexaura flagellosa 
+S097,A,Plexaurella dichotoma 
+S098,A,Eunicea succinea 
+S099,A,Antillogorgia n sp
+S100,A,Antillogorgia kallos 
+S101,A,Eunicea tayrona 
+S102,A,Eunicea clavigera 
+S103,A,Muricea elongata 
+S104,A,Eunicea tourneforti fatra
+S105,A,Eunicea calyculata 
+S106,A,Eunicea tourneforti 
+S107,A,Antillogorgia americana 
+S108,A,Eunicea knighti 
+S109,A,Pterogorgia citrina 
+S110,A,Plexaurella grisea 
+S111,A,Eunicea fusca 
+S112,A,Pseudoplexaura porosa 
+S113,A,Antillogorgia bipinnata 
+S114,A,Eunicea fusca 
+S115,A,Plexaura kuna 
+S116,A,Pterogorgia guadalupensis 
+S117,A,Eunicea laciniata 
+S118,A,Antillogorgia acerosa 
+S119,A,Muricea atlantica 
+S121,A,Plexaura homomalla 
+S122,A,Muricea laxa 
+S123,A,Eunicea flexuosa 
+S124,A,Eunicea mammosa 
+S125,A,Pseudoplexaura wagenaari 
+S126,A,Briareum asbestinum 
+S127,A,Plexaura kukenthali 
+S128,A,Muricea  atlantica
+S129,A,Pterogorgia anceps 
+S130,A,Thouarella bidentata
+S131,A,Paramuricea Type E
+S132,A,Antillogorgia elisabethae
+S133,A,Gorgonia flabellum
+ANT019,A,Alcyonium acaule
+ANT020,A,Alcyonium digitatum
+ANT021,A,Alcyonium haddoni
+ANT022,O,Anthomastus sp.
+ANT023,A,Chrysogorgia tricaulis
+ANT024,A,Clavularia sp.
+ANT025,O,Coelogorgia palmosa
+ANT026,A,Cornularia pabloi
+ANT027,A,Erythropodium caribaeorum
+ANT029,O,Keratoisidinae
+ANT030,A,Parasphaerasclera valdiviae
+ANT031,A,Plexaura kuna
+ANT033,A,Sinularia slingersi
+ANT034,A,Sinularia lochmodes
+ANT035,A,Sinularia maxima
+ANT036,A,Tubipora musica
+ANT037,O,Paraminabea aldersladei
+ANT038,A,Sarcophyton trocheliophorum
+ANT039,O,Leptophyton benayahui
+ANT040,A,Protodendron bruuni
+ANT041,A,Carijoa riisei
+ANT042,A,Complexum monodi
+ANT043,O,Alcyonium fauri
+ANT044,A,Dendronephthya sinaiensis
+ANT045,A,Taiaroa tauhou
+ANT046,A,Trichogorgia capensis
+ANT047,A,Primnoella chilensis
+ANT048,A,Incrustatus comauensis
+ANT049,A,Paramuricea sp.
+ANT050,O,Paratelesto sp.
+ANT051,A,Briareum hamrum
+ANT052,A,Acanthogorgia breviflora
+ANT053,A,Siphonogorgia godeffroyi
+ANT054,A,Bebryce sp.
+ANT055,A,Eunephthya thyrsoidea
+ANT057,A,Astrogorgia sp. 
+ANT060,A,Anthothela sp.
+ANT061,A,Ideogorgia capensis
+ANT062,A,Alertigorgia sp.
+ANT063,A,Actinoptilum molle
+ANT064,A,Sinularia brassica
+ANT065,A,Annella mollis
+ANT066,A,Astrogorgia sp.
+ANT067,A,Sinularia flexibilis
+ANT068,A,Solenocaulon sp.
+ANT069,A,Cladiella pachyclados
+ANT070,A,Nidalia simpsoni
+ANT072,A,Melithaea erythraea
+ANT073,O,Acrossota amboinensis
+ANT076,A,Paracis
+ANT077,A,Muricella
+ANT080,A,Aquaumbra klapferi
+ANT081,A,Thrombophyton coronatum
+ANT082,A,Chelidonisis a. mexicana
+ANT083,A,Ellisella sp.
+ANT084,A,Muriceopsis flavida
+ANT085,A,Anthomastus/Bathyalcyon
+ANT097,A,Nephthyigorgia sp.
+ANT098,O,Anthelia glauca
+ANT099,A,Arula petunia
+ANT100,A,Plexaurella nutans
+ANT101,A,Malacacanthus capensis
+ANT102,A,Paralemnalia thyrsoides
+ANT103,O,Caementabunda
+ANT104,O,Ovabunda macrospiculata
+ANT105,A,Acrophytum claviger
+ANT106,A,Discophyton rudyi
+ANT107,A,Ceeceenus quadrus
+ANT108,A,Azoriella bayeri
+ANT109,A,Acanthoaxis wirtzi
+ANT112,O,Keroeides sp.
+ANT113,A,Parisis sp.
+ANT114,A,Isis hippuris
+ANT115,O,Protodendron repens
+ANT116,A,Rumphella sp.
+ANT117,A,Eunicella tricoronata
+ANT170,A,Isidoides armata
+ANT171,O,Caementabunda
+ANT172,A,Sinularia wannenensis
+ANT173,A,Sinularia acuta
+ANT174,A,Telestula sp.
+ANT175,A,Candidella imbricata
+ANT176,A,Radicipes
+ANT177,O,Acanella
+ANT178,A,Dichotella
+ANT179,A,Sinularia penguensis
+ANT188,A,Eunicea flexuosa
+ANT275,A,Subergorgia
+ANT276,A,Homophyton
+ANT277,A,Parasphaerasclera sp.
+ANT028,A,Heliopora coerulea
+ANT079,A,Nanipora sp.
+ANT032,A,Virgularia schultzei
+ANT058,A,Halipteris finmarchica
+ANT059,A,Kophobelemnon sp.
+ANT074,A,Veretillum
+ANT078,A,Distichoptilum gracile
+ANT111,A,Renilla muelleri
+ANT285,A,Anthomastus grandiflorus
+ANT287,A,Pseudoanthomastus
+ANT288,A,Pseudoanthomastus
