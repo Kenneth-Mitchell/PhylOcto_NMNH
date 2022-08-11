@@ -3,14 +3,13 @@
 
 cff-version: 1.2.0
 title: >-
-  Pipeline for Phylogenetic Analysis of Gene Order in
-  Mitochondrial Genomes
+ Phylogenetic Analysis of Gene Order in Octocoral Mitochondrial Genomes
 message: >-
-  If you use this software, please cite it using the
+  If you use this software/dataset, please cite it using the
   metadata from this file.
 type: software
 authors:
   - given-names: Kenneth
     name-particle: Mitchell
     email: kmitchell@hmc.edu
-    affiliation: Harvey Mudd College
+    affiliation: Harvey Mudd College & Smithsonian Institute, Museum of Natural History
