@@ -4,7 +4,7 @@ title: >-
 message: >-
   If you use this software/dataset, please cite it using the
   metadata from this file.
-type: software
+type: software/dataset
 authors:
   - given-names: Kenneth
     name-particle: Mitchell
