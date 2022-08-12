@@ -24,8 +24,6 @@ x$full_name <- paste(rownames(x),x$Species) %>% gsub(' ','_',.) %>% sub("\\_+$",
 T$tip.label <- x$full_name[match(T$tip.label, rownames(x))]
 
 
-
-
 #Building the tree
 ske<-setNames(x$GeneOrder,x$full_name)
 
