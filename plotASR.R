@@ -38,9 +38,10 @@ pd<-summary(mtrees,plot=FALSE)
 
 #Plotting ASR and time scaled tree
 library(plotrix)
-
+par(bg='transparent')
 if (tree_type == 'fan') {
-  plot(pd, cols,type="fan",fsize=.3, ftype="i", part=.99,lwd=0.5,offset=20,cex=.2)
+  plot(pd, cols,type="fan",fsize=.3, ftype="i", part=.99,lwd=0.5,offset=20,cex=c(.5,.2))
 } else {
   plot(pd, cols,type="phylogram",fsize=.2, ftype="i", part=.99,lwd=0.5,offset=1,cex=c(.1,.1))
 }
+
