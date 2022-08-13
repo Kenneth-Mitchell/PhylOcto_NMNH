@@ -6,7 +6,7 @@ Feel free to use code for your own purposes, but please cite as according to the
 
 ### Purpose
 
-This pipeline was created to take genome skim data of octocoral mitogenomes and reconstruct a phylogeny based on their gene orders. It does so as follows:
+This pipeline was created to reconstruct a phylogeny based on the mitochondrial gene orders extracted from genome skim data of octocoral. It does so as follows:
 
 1. Trim the adapters from genome skim sequenced data using [Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic).
 2. Assemble and annotate the mitogenomes using [Mitofinder](https://github.com/RemiAllio/MitoFinder#submission-with-tbl2asn).
