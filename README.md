@@ -1,4 +1,4 @@
-# Phylocto
+# PhylOcto
 
 Feel free to use code for your own purposes, but please cite as according to the [citation file](CITATION.cff).
 
