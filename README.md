@@ -133,7 +133,7 @@ updated_file_name <- 'pruned_dated.tree'
 ```
 
 ### 5. Ancestral State Reconstruction
-Dependency: [phytools](https://github.com/liamrevell/phytools)
+Dependencies: [phytools](https://github.com/liamrevell/phytools) and [plotrix](https://cran.r-project.org/web/packages/plotrix/index.html)
 
 #### [plotASR.R](plotASR.R)
 
