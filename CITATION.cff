@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: >-
+ Phylogenetic Analysis of Gene Order in Octocoral Mitochondrial Genomes
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Kenneth
+    name-particle: Mitchell
+    email: kmitchell@hmc.edu
+    affiliation: Harvey Mudd College & Smithsonian Institute, Museum of Natural History
