@@ -174,11 +174,17 @@ Simply set tree_type to "fan" or "phylogram", and it will output accordingly.
 
 After you check all the parameters you wish, run the code and it will show you your tree!
 
+### Further Analysis
+
+If you'd like to take things a step further, you can look at my analysis code for inspiration. I was interested in whether gene order (A vs O) is dependent on branch length, so I conducted a two sample t test on my data. You can check out that code here [gene_order_analysis.R](gene_order_analysis.R), though you will have to change the paramters to fit your data. This code will conduct a t test as stated and produce some other summary statistics for you to look at. If you have any questions or interesting thoughts, reach out to me!
 
 
 
 
 The project was funded under a NOAA OER grant to C. McFadden, A. Quattrini and S. Herrera.
-Example files are provided for ease of use, these don't represent any actual findiings from this project
 
+Example files are provided for ease of use, these don't represent any actual findings from this project.
 
+Feel free to use code for your own purposes, but please cite as according to the [citation file](CITATION.cff).
+
+Please reach out to me [kmitchell@hmc.edu](mailto:kmitchell@hmc.edu) with anything you need help on.
