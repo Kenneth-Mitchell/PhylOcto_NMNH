@@ -89,18 +89,18 @@ If you also wish, you can change the start gene in the parameters file. cox1 is 
 Recommended: Note that mitofinder likes to annotate tRNAs that don't actually exist in octocoral mitogenomes. You will likely see a number of faulty tRNAs detected by [gene_order.py](gene_order.py). If you would like to verify that these are in fact faulty, use [tRNAscan-SE](https://github.com/UCSC-LoweLab/tRNAscan-SE) to double check your mitogenome files. They have a webserver [here](http://trna.ucsc.edu/tRNAscan-SE/) which accepts a fasta file, just remember to set the source to invertebrate mitochondrial.
 
 ### 4. Construct Phylogeny from Mitofinder Results
-Dependencies: [MAFFT](https://mafft.cbrc.jp/alignment/software/) and [IQ-TREE](http://www.iqtree.org). Feel free to use their webservers rather than running them manually.
+Dependencies: [MAFFT](https://mafft.cbrc.jp/alignment/software/) and [IQ-TREE](http://www.iqtree.org). Feel free to use their webservers rather than running them manually. Also optionally [ape](https://cran.r-project.org/web/packages/ape/index.html) and [phytools](https://github.com/liamrevell/phytools).
 
 #### [alignment_script.sh](alignment_script.sh)
-Recommended: If you'd like to make your life easier, first use [alignment_script](alignment_script) to aggregate all the .fasta files you need from the mitofinder results into a new directory.
+Recommended: If you'd like to make your life easier, first use [alignment_script.sh](alignment_script.sh) to aggregate all the .fasta files you need from the mitofinder results into a new directory.
 
 Example usage:
 ```
 bash alignment_script.sh dir-with-mitofinder-results
 ```
 
-#### [alignment_from_mitofinder](alignment_from_mitofinder)
-Use [alignment_from_mitofinder](alignment_from_mitofinder) by supplying the path to a directory of .fasta files you want to create alignment files for. It will create a fasta file for each gene found (so, every gene in the mitochondrial genomes) ready for alignment. You can specify whether or not to overwrite pre-existing files with --overwrite.
+#### [alignment_from_mitofinder.py](alignment_from_mitofinder.py)
+Use [alignment_from_mitofinder.py](alignment_from_mitofinder.py) by supplying the path to a directory of .fasta files you want to create alignment files for. It will create a fasta file for each gene found (so, every gene in the mitochondrial genomes) ready for alignment. You can specify whether or not to overwrite pre-existing files with --overwrite.
 
 Example usage:
 ```
@@ -117,18 +117,62 @@ Afterwards, be sure to concatenate your alignment files in order to make the tre
 
 I use [IQ-TREE](http://www.iqtree.org)'s webserver rather than running it locally, located [here](http://iqtree.cibiv.univie.ac.at) (though, there's actually a couple different servers). You'll give it your concatenated alignment file, and then run the tree. Again, very simple to run, no extra advice needed.
 
+Afterwards, feel free to date you tree however you'd like. It's useful (but optioinal) to be dated for later analysis.
+
 #### [prune_species.R](prune_species.R)
 
+If you have any species you would like to prune from the tree (maybe they didn't have complete mitogenomes), now's the time to do so. Use [prune_species.R](prune_species.R) by going into the file and editing the parameters to fit your needs. Then, just run it as is.
+
+For instance, here were my parameters:
+```
+tree_file <- 'unpruned_dated.tree'
+
+species_to_drop <- c("ANT056", "ANT075")
+
+updated_file_name <- 'pruned_dated.tree'
+```
+
+### 5. Ancestral State Reconstruction
+Dependency: [phytools](https://github.com/liamrevell/phytools)
+
+#### [plotASR.R](plotASR.R)
+
+Use [plotASR.R](plotASR.R) by editing the parameters in the file, such as before. These parameters are more complicated, so I will explain the complex ones here.
+
+```
+traits_table_file <- "traits_table_binary.csv"
+```
+traits_table_file is a csv with columns 'Sample', 'GeneOrder' and 'Species'. You can easily create this csv from the one produced by [gene_order.py](gene_order.py), just add your species information and change any updated column names. 
+
+For example, it should look something like this:
+
+| Sample | GeneOrder | Species              |
+|--------|-----------|----------------------|
+| S001   | A         | Swiftia exserta      |
+| S002   | B         | Muricea pendula      |
+| S003   | A         | Plexaura kuna        |
+
+```
+colors <- c("black","red")
+```
+colors is a vector of the colors you'd like to assign to gene orders in your reconstructed tree. With the example from above, A would be colored black and B would be colored red. Make sure the number of colors you choose matches the number of unique gene orders found. 
+
+Specific to octocorals, you may wish to do analysis of ancestral gene orders vs. other gene orders. This is what I did, and I set all non-ancestral gene orders to 'O', for 'Other'. That way, you just need two colors.
+
+```
+root_probs <- c(1,0)
+```
+root_probs is a vector of the probabilities of the root's gene order. With the example from above, A would be fixed at the root with 100% probability. You may leave this blank, but you should go edit the ASR call in the file accordingly. 
+
+For octocorals, you may wish to fix the ancestral order at the root of your tree, as I did.
+
+```
+tree_type <- "fan"
+```
+Simply set tree_type to "fan" or "phylogram", and it will output accordingly.
 
 
-
-
-
-
-
-
-
-
+After you check all the parameters you wish, run the code and it will show you your tree!
 
 
 
