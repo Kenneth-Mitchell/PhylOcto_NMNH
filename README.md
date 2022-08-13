@@ -2,8 +2,6 @@
 
 Feel free to use code for your own purposes, but please cite as according to the [citation file](CITATION.cff).
 
-# Pipeline
-
 ### Purpose
 
 This pipeline was created to reconstruct a phylogeny based on the mitochondrial gene orders extracted from genome skim data of octocoral. It does so as follows:
