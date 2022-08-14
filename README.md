@@ -41,7 +41,7 @@ bash octo_mitofinder.sh dir-with-reads database.gb
 ```
 
 ### 3. Extract Gene Orders from Octocoral Mitogenomes
-Dependencies: [Biopython](https://biopython.org), and optionally the webserver at [here](http://trna.ucsc.edu/tRNAscan-SE/).
+Dependencies: [Biopython](https://biopython.org), and optionally the webserver at [http://trna.ucsc.edu/tRNAscan-SE/](http://trna.ucsc.edu/tRNAscan-SE/).
 
 #### [gene_order_script.sh](gene_order_script.sh)
 Recommended: If you'd like to make your life easier, first use [gene_order_script.sh](gene_order_script.sh) to aggregate all the .gb and .infos files you need from the mitofinder results into a new directory.
