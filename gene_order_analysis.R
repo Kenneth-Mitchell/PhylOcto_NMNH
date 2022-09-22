@@ -1,5 +1,6 @@
 # likelihood of an altered gene order based on the age of a node
 library(ggplot2)
+library(ape)
 tree_file <-'pruned_dated.tree'
 
 traits_table_file <- "traits_table_binary.csv"
